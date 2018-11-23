@@ -10,12 +10,12 @@ script:
   - docker run uppalavijay/react-test npm test  -- --coverage
 
 after_success:
-  - docker build -t uppalavijay/muilti-client ./client
-  - docker build -t uppalavijay/muilti-ngnix ./ngnix
-  - docker build -t uppalavijay/muilti-server ./server
-  - docker build -t uppalavijay/muilti-worker ./worker
+  - docker build -t uppalavijay/multi-client ./client
+  - docker build -t uppalavijay/multi-ngnix ./ngnix
+  - docker build -t uppalavijay/multi-server ./server
+  - docker build -t uppalavijay/multi-worker ./worker
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin 
-  - docker push uppalavijay/muilti-client
-  - docker push uppalavijay/muilti-ngnix
-  - docker push uppalavijay/muilti-server
-  - docker push uppalavijay/muilti-worker
+  - docker push uppalavijay/multi-client
+  - docker push uppalavijay/multi-ngnix
+  - docker push uppalavijay/multi-server
+  - docker push uppalavijay/multi-worker
